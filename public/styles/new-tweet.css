@@ -1,0 +1,32 @@
+section {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+#tweet-button {
+  background-color: #4056A1;
+  color: white;
+  font-family: 'Bungee', sans-serif;
+  border: none;
+}
+
+#tweet-text {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: solid 4px grey;
+  resize: none;
+}
+
+
+
+#submit-output {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
