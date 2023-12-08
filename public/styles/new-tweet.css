@@ -1,17 +1,22 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 section {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  /* width: 75%; */
 }
 
-#tweet-button {
+.tweet-button {
   background-color: #4056A1;
   color: white;
   font-family: 'Bungee', sans-serif;
   border: none;
 }
 
-#tweet-text {
+.tweet-text {
   background-color: transparent;
   border: none;
   width: 100%;
@@ -19,7 +24,7 @@ section {
   resize: none;
 }
 
-#submit-output {
+.submit-output {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -32,4 +37,33 @@ section {
 .negative {
   color: red;
   font-family: 'Bungee', sans-serif;
+}
+
+article {
+  border: solid 4px grey;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 25px;
+}
+
+article:hover {
+  box-shadow: 8px 8px 7px 1px #a5b0d7;
+}
+
+.tag {
+  color: rgb(197, 195, 195);
+  font-weight: 600;
+}
+
+.fa-solid {
+  color: #4056A1;
+}
+
+.fa-solid:hover {
+  color: rgb(217, 161, 20);
+}
+
+.post {
+  display: flex;
+  justify-content: space-between;
 }
