@@ -11,6 +11,13 @@ nav {
   font-family: 'Bungee', sans-serif;
  }
 
- #angles-down {
-  color: red;
+ #write {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
  }
+
+ #angles-down {
+  color: red;;
+}
