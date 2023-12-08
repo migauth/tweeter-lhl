@@ -19,8 +19,6 @@ section {
   resize: none;
 }
 
-
-
 #submit-output {
   display: flex;
   flex-direction: row;
@@ -28,5 +26,10 @@ section {
 }
 
 .counter {
+  font-family: 'Bungee', sans-serif;
+}
+
+.negative {
+  color: red;
   font-family: 'Bungee', sans-serif;
 }
