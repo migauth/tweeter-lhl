@@ -66,4 +66,20 @@ article:hover {
 .post {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.user-name {
+  margin-left: 15px;
+}
+
+p {
+  font-weight: 600;
 }
