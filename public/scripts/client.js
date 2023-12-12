@@ -77,6 +77,11 @@ $(document).ready(function () {
   loadTweets()
 
   $("#new-tweet").on("submit", function (event) { // Event handler
+    if ($('.tweet-text').val() === "" || $('.tweet-text').val() === null) {
+      return alert("Empty field, please add comment.")
+    } else if ($('.tweet-text').val().length > 140) {
+      return alert("Message too long.")
+    }
     const $tweetContainer = $('#tweets-container');
     event.preventDefault(); // Prevents form submission
     let serial = $(this).serialize();
