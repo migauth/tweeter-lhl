@@ -58,9 +58,10 @@ const createTweetElement = function (tweet) {
 
 // Loop through an array of tweet objects and pass each to createTweetElement
 const renderTweets = function (tweets) {
-  // loops through tweets
+  $('#tweets-container').empty(); // Moved this up from ajax to stop refresh...
+
   for (const i of tweets) {
-    let $tweet = createTweetElement(i)
+    let $tweet = createTweetElement(i);
     $('#tweets-container').prepend($tweet);
   }
 };
@@ -83,20 +84,20 @@ $(document).ready(function () {
       return alert("Message too long.")
     }
     const $tweetContainer = $('#tweets-container');
-    event.preventDefault(); // Prevents form submission
     let serial = $(this).serialize();
     $.ajax({
       type: "POST",
       url: "http://localhost:8080/tweets",
       data: serial,
       success: () => {
-        $tweetContainer.empty()
+        // $tweetContainer.empty() Was here before but messed up refreshing...
         loadTweets()
       },
       dataType: "text"
     });
+    event.preventDefault(); // Prevents form submission
   });
-
+  
 })
 
 
