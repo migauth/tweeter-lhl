@@ -9,6 +9,14 @@ section {
   /* width: 75%; */
 }
 
+.new-tweet {
+  margin-top: 70px;
+}
+
+label {
+  font-weight: 600;
+}
+
 .tweet-button {
   background-color: #4056A1;
   color: white;
@@ -22,7 +30,7 @@ section {
   width: 100%;
   border-bottom: solid 4px grey;
   resize: none;
-}
+} 
 
 .submit-output {
   display: flex;
@@ -59,6 +67,8 @@ article:hover {
   color: #4056A1;
 }
 
+
+
 .fa-solid:hover {
   color: rgb(217, 161, 20);
 }
@@ -82,4 +92,17 @@ article:hover {
 
 p {
   font-weight: 600;
+}
+
+/* Error message */
+
+.error-message {
+  border: solid 4px red;
+  color: red;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 20px;
+}
+
+#error-icon {
+  color: red;
 }
