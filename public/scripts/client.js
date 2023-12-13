@@ -4,32 +4,11 @@
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 //  */
 
-// Template for tweeter user data
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 // Create HTML template for tweets
 const createTweetElement = function (tweet) {
@@ -37,15 +16,15 @@ const createTweetElement = function (tweet) {
     `<article class="tweet">
       <header class="post header">
         <div class="user">
-          <img src="${tweet.user.avatars}" alt="face">
-          <span class="user-name">${tweet.user.name}</span>
+          <img src="${escape(tweet.user.avatars)}" alt="face">
+          <span class="user-name">${escape(tweet.user.name)}</span>
         </div>
-        <span class="tag">${tweet.user.handle}</span>
+        <span class="tag">${escape(tweet.user.handle)}</span>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <hr>
       <footer class="post footer">
-        <span>${timeago.format(tweet.created_at)}</span>
+        <span>${escape(timeago.format(tweet.created_at))}</span>
         <div>
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -55,6 +34,8 @@ const createTweetElement = function (tweet) {
     </article>`)
   return $tweet;
 };
+
+// $("p").text(userText);
 
 // Loop through an array of tweet objects and pass each to createTweetElement
 const renderTweets = function (tweets) {
@@ -78,26 +59,29 @@ $(document).ready(function () {
   loadTweets()
 
   $("#new-tweet").on("submit", function (event) { // Event handler
-    if ($('.tweet-text').val() === "" || $('.tweet-text').val() === null) {
-      return alert("Empty field, please add comment.")
-    } else if ($('.tweet-text').val().length > 140) {
-      return alert("Message too long.")
-    }
-    const $tweetContainer = $('#tweets-container');
-    let serial = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8080/tweets",
-      data: serial,
-      success: () => {
-        // $tweetContainer.empty() Was here before but messed up refreshing...
-        loadTweets()
-      },
-      dataType: "text"
-    });
     event.preventDefault(); // Prevents form submission
+    if ($('.tweet-text').val() === "" || $('.tweet-text').val() === null) {
+      $("#too-long").slideUp("slow");
+      return $('#empty').slideDown("slow")
+    } else if ($('.tweet-text').val().length > 140) {
+      $("#empty").slideUp("slow");
+      return $('#too-long').slideDown("slow")
+    } else {
+      $(".error-message").slideUp("slow");
+      let serial = $(this).serialize();
+      console.log(serial);
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/tweets",
+        data: serial,
+        success: () => {
+          // $tweetContainer.empty() Was here before but messed up refreshing...
+          loadTweets()
+        },
+        dataType: "text"
+      });
+    }
   });
-  
 })
 
 
