@@ -63,7 +63,8 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+        <p hidden id="empty" class="error-message"><i id="error-icon" class="fa-solid fa-triangle-exclamation"></i> Empty field, please add comment! <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i></p>
+        <p hidden id="too-long" class="error-message"><i id="error-icon" class="fa-solid fa-triangle-exclamation"></i> Message too long! <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i></p>
       <!-- <form method="POST" action="/tweets" id="new-tweet"> -->
       <form id="new-tweet">
         <label for="tweet-text">What are you humming about?</label>
