@@ -1,5 +1,7 @@
 .main-header {
-  height: 520px;
+  height: 400px;
+  width: 100%;
+  margin-top: 170px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,4 +9,25 @@
   background-color: rgb(232, 166, 25);
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
   color: white;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    transform: scale(0.75);
+    width: 45%;
+    float: left;
+    height: 400px;
+  }
+  
+  img {
+    transform: scale(0.90);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main-header {
+    margin-top: 0;
+    padding-top: 120px;
+    height: 520px;
+  }
 }

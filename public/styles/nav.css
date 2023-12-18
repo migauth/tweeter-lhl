@@ -1,23 +1,34 @@
 nav {
   display: flex;
+  width: 100%;
   height: 120px;
-  background-color: #4056A1 ;
+  background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
   justify-content: space-between;
+  position: fixed;
+  z-index: 2;
 }
 
 #logo {
   font-family: 'Bungee', sans-serif;
- }
+}
 
- #write {
+#write {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- }
+}
 
- #angles-down {
-  color: red;;
+#angles-down {
+  color: red;
+  ;
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    background-color: transparent;
+    margin-top: 0;
+  }
 }
