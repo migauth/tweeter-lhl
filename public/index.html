@@ -36,7 +36,12 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
 
 </head>
 
@@ -50,36 +55,41 @@
     </div>
   </nav>
 
-  <header class="main-header">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Your Name</h2>
-    </div>
-  </header>
+  <div class="responsive">
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-        <p hidden id="empty" class="error-message"><i id="error-icon" class="fa-solid fa-triangle-exclamation"></i> Empty field, please add comment! <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i></p>
-        <p hidden id="too-long" class="error-message"><i id="error-icon" class="fa-solid fa-triangle-exclamation"></i> Message too long! <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i></p>
-      <!-- <form method="POST" action="/tweets" id="new-tweet"> -->
-      <form id="new-tweet">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
-        <div class="submit-output">
-          <button type="submit" class="tweet-button">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
+    <header class="main-header">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Your Name</h2>
+      </div>
+    </header>
 
-    <!-- Where new tweets show up -->
-    <section id="tweets-container"></section>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <p hidden id="empty" class="error-message"><i id="error-icon" class="fa-solid fa-triangle-exclamation"></i>
+          Empty field, please add comment! <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i></p>
+        <p hidden id="too-long" class="error-message"><i id="error-icon" class="fa-solid fa-triangle-exclamation"></i>
+          Message too long! <i id="error-icon" class="fa-solid fa-triangle-exclamation"></i></p>
+        <!-- <form method="POST" action="/tweets" id="new-tweet"> -->
+        <form id="new-tweet">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text" class="tweet-text"></textarea>
+          <div class="submit-output">
+            <button type="submit" class="tweet-button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-  </main>
+      <!-- Where new tweets show up -->
+      <section id="tweets-container"></section>
+
+    </main>
+  </div>
 </body>
 
 </html>
