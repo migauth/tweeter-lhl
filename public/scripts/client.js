@@ -81,6 +81,7 @@ $(document).ready(function () {
         },
         dataType: "text"
       });
+      $('textarea').val('');
     }
   });
 })
