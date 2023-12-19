@@ -2,6 +2,11 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+## Final Product
+
+!["Screenshot of desktop view"](https://github.com/migauth/tweeter-lhl/blob/master/docs/desktop-view.jpeg?raw=true)
+!["Screenshot of tablet view"](https://github.com/migauth/tweeter-lhl/blob/master/docs/tablet-view.jpeg?raw=true)
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
