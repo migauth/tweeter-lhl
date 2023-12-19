@@ -1,3 +1,5 @@
+/* Header for tweeter */
+
 .main-header {
   height: 400px;
   width: 100%;
@@ -11,6 +13,8 @@
   color: white;
 }
 
+/* For Desktop screen size */
+
 @media only screen and (min-width: 1024px) {
   .main-header {
     transform: scale(0.75);
@@ -23,6 +27,8 @@
     transform: scale(0.90);
   }
 }
+
+/* For Tablet screen size */
 
 @media only screen and (max-width: 1024px) {
   .main-header {

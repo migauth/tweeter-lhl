@@ -1,3 +1,5 @@
+/* New tweet container design */
+
 main {
   display: flex;
   flex-direction: column;
@@ -29,21 +31,12 @@ label {
   width: 100%;
   border-bottom: solid 4px grey;
   resize: none;
-} 
+}
 
 .submit-output {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.counter {
-  font-family: 'Bungee', sans-serif;
-}
-
-.negative {
-  color: red;
-  font-family: 'Bungee', sans-serif;
 }
 
 article {
@@ -59,16 +52,6 @@ article:hover {
 .tag {
   color: rgb(197, 195, 195);
   font-weight: 600;
-}
-
-/* Awesome fonts */
-
-.fa-solid {
-  color: #4056A1;
-}
-
-.fa-solid:hover {
-  color: rgb(217, 161, 20);
 }
 
 .post {
@@ -90,6 +73,27 @@ article:hover {
 
 p {
   font-weight: 600;
+}
+
+/* Awesome fonts */
+
+.fa-solid {
+  color: #4056A1;
+}
+
+.fa-solid:hover {
+  color: rgb(217, 161, 20);
+}
+
+/* For counter  */
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
+
+.negative {
+  color: red;
+  font-family: 'Bungee', sans-serif;
 }
 
 /* Error message */

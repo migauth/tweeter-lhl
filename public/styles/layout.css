@@ -36,6 +36,7 @@ main {
   background-color: #f4f1ec;
 }
 
+/* For Desktop screen size */
 
 @media only screen and (min-width: 1024px) {
   .responsive {
