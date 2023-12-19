@@ -4,7 +4,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
+Desktop View
 !["Screenshot of desktop view"](https://github.com/migauth/tweeter-lhl/blob/master/docs/desktop-view.jpeg?raw=true)
+Tablet View
 !["Screenshot of tablet view"](https://github.com/migauth/tweeter-lhl/blob/master/docs/tablet-view.jpeg?raw=true)
 
 ## Getting Started
@@ -17,7 +19,9 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Instructions
 
-
+- Users can post tweets by typing in the text area below "What are you humming about?
+- On the bottom right there is a count that will let the user know when they have exceeded chatacter limit.
+- If user submits past character limit, or with an empty field, an error message will appear.
 
 ## Dependencies
 
