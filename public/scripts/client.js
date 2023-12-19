@@ -5,14 +5,14 @@
 //  */
 
 // Prevent Cross-Site Scripting
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 // Create HTML template for tweets
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   let $tweet = $(
     `<article class="tweet">
       <header class="post header">
@@ -32,58 +32,56 @@ const createTweetElement = function (tweet) {
           <i class="fa-solid fa-heart"></i>
         </div>
       </footer>
-    </article>`)
+    </article>`);
   return $tweet;
 };
 
-// $("p").text(userText);
-
 // Loop through an array of tweet objects and pass each to createTweetElement
-const renderTweets = function (tweets) {
-  $('#tweets-container').empty(); // Moved this up from ajax to stop refresh...
-
+const renderTweets = function(tweets) {
+  $('#tweets-container').empty(); // Empties tweet container to prevent doubling
   for (const i of tweets) {
     let $tweet = createTweetElement(i);
     $('#tweets-container').prepend($tweet);
   }
 };
 
-$(document).ready(function () {
-
-  const loadTweets = function () {
+$(document).ready(function() {
+  const loadTweets = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
-      .then(function (tweets) {
+      .then(function(tweets) {
         renderTweets(tweets);
       });
-  }
+  };
 
-  loadTweets()
+  loadTweets();
 
-  $("#new-tweet").on("submit", function (event) { // Event handler
+  $("#new-tweet").on("submit", function(event) { // Event handler
     event.preventDefault(); // Prevents form submission
+    // Show error if empty textarea
     if ($('.tweet-text').val() === "" || $('.tweet-text').val() === null) {
       $("#too-long").slideUp("slow");
-      return $('#empty').slideDown("slow")
+      return $('#empty').slideDown("slow");
+    // Show error if too many typed characters
     } else if ($('.tweet-text').val().length > 140) {
       $("#empty").slideUp("slow");
-      return $('#too-long').slideDown("slow")
+      return $('#too-long').slideDown("slow");
+    // Submit
     } else {
       $(".error-message").slideUp("slow");
       let serial = $(this).serialize();
-      console.log(serial);
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/tweets",
         data: serial,
         success: () => {
-          // $tweetContainer.empty() Was here before but messed up refreshing...
-          loadTweets()
+          loadTweets();
         },
         dataType: "text"
       });
+      // Empty textarea after submit
       $('textarea').val('');
     }
   });
-})
+});
 
 
