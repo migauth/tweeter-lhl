@@ -30,7 +30,7 @@
 
 /* For Tablet screen size */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   .main-header {
     margin-top: 0;
     padding-top: 120px;

@@ -30,7 +30,7 @@ nav {
 
 /* For tablet view */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   nav {
     background-color: transparent;
     margin-top: 0;
