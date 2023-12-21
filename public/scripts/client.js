@@ -42,6 +42,13 @@ const renderTweets = function(tweets) {
 };
 
 $(document).ready(function() {
+
+  // Toggle button
+  $("#write").on("click", function() {
+    $(".new-tweet").toggle("slow");
+    $('textarea').focus();
+  });
+
   const loadTweets = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then(function(tweets) {
