@@ -37,6 +37,7 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 article {
@@ -107,4 +108,12 @@ p {
 
 #error-icon {
   color: red;
+}
+
+/* For Desktop screen size */
+
+@media only screen and (min-width: 1024px) {
+  article {
+    margin-top: 100px;
+  }
 }

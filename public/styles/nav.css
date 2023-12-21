@@ -25,7 +25,10 @@ nav {
 
 #angles-down {
   color: red;
-  ;
+}
+
+#angles-down:hover {
+  color: white;
 }
 
 /* For Desktop screen size */
