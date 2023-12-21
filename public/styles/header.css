@@ -3,7 +3,6 @@
 .main-header {
   height: 400px;
   width: 100%;
-  margin-top: 170px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +10,15 @@
   background-color: rgb(232, 166, 25);
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
   color: white;
+}
+
+img {
+  margin-top: 50px;
+  transform: scale(0.90);
+}
+
+.user-name {
+  margin-bottom: 25px;
 }
 
 /* For Desktop screen size */
@@ -21,19 +29,6 @@
     width: 45%;
     float: left;
     height: 400px;
-  }
-  
-  img {
-    transform: scale(0.90);
-  }
-}
-
-/* For Tablet screen size */
-
-@media only screen and (max-width: 1023px) {
-  .main-header {
-    margin-top: 0;
-    padding-top: 120px;
-    height: 520px;
+    margin-top: 170px;
   }
 }
