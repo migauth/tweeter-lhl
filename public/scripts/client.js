@@ -6,14 +6,14 @@
 
 // Prevent Cross-Site Scripting
 const escape = function(str) {
-  let div = document.createElement("div");
+  const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 // Create HTML template for tweets
 const createTweetElement = function(tweet) {
-  let $tweet = $(
+  const $tweet = $(
     `<article class="tweet">
       <header class="post header">
         <div class="user">
@@ -40,7 +40,7 @@ const createTweetElement = function(tweet) {
 const renderTweets = function(tweets) {
   $('#tweets-container').empty(); // Empties tweet container to prevent doubling
   for (const i of tweets) {
-    let $tweet = createTweetElement(i);
+    const $tweet = createTweetElement(i);
     $('#tweets-container').prepend($tweet);
   }
 };
@@ -68,7 +68,7 @@ $(document).ready(function() {
     // Submit
     } else {
       $(".error-message").slideUp("slow");
-      let serial = $(this).serialize();
+      const serial = $(this).serialize();
       $.ajax({
         type: "POST",
         url: "http://localhost:8080/tweets",
@@ -78,8 +78,9 @@ $(document).ready(function() {
         },
         dataType: "text"
       });
-      // Empty textarea after submit
+      // Empty textarea after submit and reset counter
       $('textarea').val('');
+      $("#tweet-text").parents()[0][2].textContent = 140;
     }
   });
 });
