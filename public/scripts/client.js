@@ -1,8 +1,4 @@
-// /*
-//  * Client-side JS logic goes here
-//  * jQuery is already loaded
-//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
-//  */
+// Tweeter client
 
 // Prevent Cross-Site Scripting
 const escape = function(str) {
