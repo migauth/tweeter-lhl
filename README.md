@@ -19,9 +19,10 @@ Tablet View
 
 ## Instructions
 
-- Users can post tweets by typing in the text area below "What are you humming about?
-- On the bottom right there is a count that will let the user know when they have exceeded chatacter limit.
+- Users can post tweets by typing in the text area below "What are you humming about?"
+- On the bottom right there is a count that will let the user know when they have exceeded chatacter limit. Max limit is 140.
 - If user submits past character limit, or with an empty field, an error message will appear.
+- Tweeter has a responive desin for desktop and tablet/mobile size.
 
 ## Dependencies
 
