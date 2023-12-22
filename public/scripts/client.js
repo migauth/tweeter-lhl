@@ -49,6 +49,21 @@ $(document).ready(function() {
     $('textarea').focus();
   });
 
+  // Scroll up button
+  $(document).on("scroll", function() {
+    if ($(this).scrollTop() > 0) {
+      $(".up").fadeIn("fast");
+    } else {
+      $(".up").fadeOut("fast");
+    }
+  })
+
+  $(".up").on("click", function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow"); 
+  
+  });
+
+
   const loadTweets = function() {
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
       .then(function(tweets) {
@@ -58,6 +73,7 @@ $(document).ready(function() {
 
   loadTweets();
 
+  //Show new tweets
   $("#new-tweet").on("submit", function(event) { // Event handler
     event.preventDefault(); // Prevents form submission
     // Show error if empty textarea
