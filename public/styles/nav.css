@@ -31,6 +31,28 @@ nav {
   color: white;
 }
 
+/* Scroll up button */
+
+.up {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  bottom: 40px;
+  right: 40px;
+  background-color: red;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.5em;
+}
+
+.up:hover {
+  background-color: #4056A1;;
+}
+
+#angles-up {
+  color: white;
+}
+
 /* For Desktop screen size */
 
 @media only screen and (min-width: 1024px) {
