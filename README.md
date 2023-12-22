@@ -23,6 +23,8 @@ Tablet View
 - On the bottom right there is a count that will let the user know when they have exceeded chatacter limit. Max limit is 140.
 - If user submits past character limit, or with an empty field, an error message will appear.
 - Tweeter has a responsive desin for desktop and tablet/mobile size.
+- Click down double arrows to toggle comment area.
+- Scroll to top of page button will appear if scrolling down.
 
 ## Dependencies
 
